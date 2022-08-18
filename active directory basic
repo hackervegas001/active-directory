@@ -1,0 +1,17 @@
+1) Deploy the machine
+2) ssh or Rdp into the machine 
+
+user:Administrator
+pass:P@$$W0rd
+domain:CONTROLLER.local
+
+PowerView Setup-
+1) cd Downloads - navigate to the directory PowerView is in 
+3) IMPORT-MODULE ./PowerView.ps1  - import script in powershell
+2) Powershell -ep bypass - load a powershell with execution policy bypassed
+4) ../PowerView.ps1 - import the powerView module
+
+
+Get-NetComputer -fulldata | select operatingsystem   - gets a list of all operating system on the domain
+Get-NetComputer | select cn    - gets a list of all users on the domain
+
